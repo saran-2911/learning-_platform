@@ -1,0 +1,454 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F7F9FA; /* Lighter, cleaner background */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #2C3E50; /* Deep charcoal blue */
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #4A90E2; /* Professional blue */
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.btn:hover {
+    background-color: #357ABD; /* Darker shade for hover */
+}
+
+/* Hero Section */
+.hero {
+    background-image: url(1.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;/* Using the primary blue for impact */
+    color:black;
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+/* Why Us Section */
+.text-center {
+    text-align: center;
+}
+
+.features-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    max-width: 30%;
+    min-width: 250px;
+    padding: 1rem;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: #4A90E2; /* Use primary accent color */
+    margin-bottom: 1rem;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 2rem;
+    width: 90%;
+    margin: 1rem auto;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Hide the posters that scroll out of view */
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: transparent;
+    width: 30%;
+    min-width: 250px;
+    height: 350px; /* A fixed height is needed for the 3D effect */
+    margin: 1rem 0;
+    perspective: 1000px; /* Creates the 3D space for children */
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* For Safari */
+    backface-visibility: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.card-front {
+    background: #f9f9f9;
+}
+
+.card-back {
+    background-color: #2C3E50; /* Consistent with header/footer */
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+}
+
+.card-back .btn {
+    margin-top: 1rem;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+
+/* Registration Form */
+.form-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#error-message {
+    color: red;
+    margin-bottom: 1rem;
+}
+
+/* Bootcamps Section */
+.bootcamp-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    transition: transform 0.7s ease-in-out;
+}
+
+.bootcamp-poster {
+    /* Each poster takes up half the container width, minus half the gap */
+    flex: 0 0 calc(50% - 1rem);
+    min-width: calc(50% - 1rem);
+    height: 250px;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Aligns content to the bottom */
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bootcamp-poster:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(44, 62, 80, 0.3);
+}
+
+/* Specific poster backgrounds */
+.bootcamp-webdev {
+    background-image: url(4.png);
+background-size: cover;}
+.bootcamp-ux {
+    background-image:url(5.webp);
+background-size: cover;}
+.bootcamp-cloud {
+    background-image: url(7.webp);
+background-size: cover;}
+.bootcamp-devops {
+    background-image: url(8.webp);
+background-size: cover;}
+.bootcamp-dsa {
+    background-image: url(6.webp);
+    background-size: cover;
+}
+.bootcamp-mobile{
+    background-image: url(14.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Add a semi-transparent overlay for text readability */
+.bootcamp-poster::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%);
+    z-index: 1;
+}
+
+.poster-content {
+    position: relative;
+    z-index: 2;
+}
+
+.slideshow-nav {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot.active, .dot:hover {
+    background-color: #4A90E2; /* Use primary accent color */
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background-color: #F7F9FA; /* Match the body background */
+    padding: 2rem;
+    text-align: center;
+    width: 90%;
+    margin: 1rem auto;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.testimonial-card {
+    background: #fff;
+    border-left: 5px solid #4A90E2; /* Accent border */
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    max-width: 30%;
+    min-width: 250px;
+    text-align: left;
+}
+
+.testimonial-card cite {
+    font-weight: bold;
+    color: #357ABD;
+}
+
+/* Footer */
+footer {
+    background-color: #2C3E50; /* Consistent with header */
+    color: #fff;
+    padding: 2rem 0 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    margin: 1rem;
+}
+
+.footer-column h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #4A90E2;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #fff;
+}
+
+.social-icons {
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    color: #2C3E50; /* Icon color matches the footer background */
+    background-color: #fff; /* White circle */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #4A90E2; /* Primary accent color on hover */
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-top: 1rem;
+}
+
+/* --- Responsive Design --- */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        top: 70px; /* Adjust based on header height */
+        background-color: #2C3E50;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        padding-bottom: 1rem;
+    }
+
+    .nav-links.nav-active {
+        transform: translateX(0%);
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+        opacity: 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+}
